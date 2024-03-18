@@ -5,14 +5,18 @@ import './App.css';
 import HomePage from "./components/homePage"
 import QuerySuperHeroes from "./components/querySuperHeroes";
 import SuperHeroesPage from './components/superHeroPage';
+import TodoApp  from "./Todo/app.js";
 
 const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <QuerySuperHeroes />
+      {/* <QuerySuperHeroes /> */}
       {/* <SuperHeroesPage /> */}
       {/*  <HomePage /> */}
+      <TodoApp/>
+      
+
     </QueryClientProvider>
 
   );
