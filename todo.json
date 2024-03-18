@@ -1,0 +1,19 @@
+{
+  "todo": [
+    {
+      "title": "Buy groceries",
+      "description": "Milk, bread, eggs",
+      "completed": false
+    },
+    {
+      "title": "Finish report",
+      "description": "Due tomorrow",
+      "completed": true
+    },
+    {
+      "title": "Clean the house",
+      "description": "",
+      "completed": false
+    }
+  ]
+}
