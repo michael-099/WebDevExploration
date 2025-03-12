@@ -21,17 +21,28 @@
     </header>
     <main>
         <h3>Login page</h3>
-        <fieldset>
-            <legend>
-                create an account
-            </legend>
-            <label for="username"><small>username</small></label>
-            <input type="text" id="username" name="username" autocomplete="off">
-            <label for="password"><small>password</small></label>
-            <input type="text" id="password" name="password" autocomplete="off">
-        <br/>
-        <button>sign Up</button>
-        </fieldset>
+        <form action="/register" method="POST">
+            <% if (errors.length> 0) { %>
+                <% errors.forEach(error=> { %>
+                    <p style="color: red;">
+                        <%= error %>
+                    </p>
+                    <% }); %>
+                        <% } %>
+
+
+                            <fieldset>
+                                <legend>
+                                    create an account
+                                </legend>
+                                <label for="username"><small>username</small></label>
+                                <input type="text" id="username" name="username" autocomplete="off">
+                                <label for="password"><small>password</small></label>
+                                <input type="text" id="password" name="password" autocomplete="off">
+                                <br />
+                                <button>sign Up</button>
+                            </fieldset>
+        </form>
 
     </main>
 
