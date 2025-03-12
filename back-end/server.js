@@ -5,26 +5,26 @@ const app = express();
 //  OR
 // app.get("/",()=>{})
 
-function get1() {
+function get() {
   app.get("/", (req, res) => {
     res.send("Hello world form app !!!!");
   });
-
 }
 
-function get2() {
+function get_app() {
   app.set("view engine", "ejs");
-
+  app.use(express.static("public"));
   app.get("/", (req, res) => {
     res.render("homepage.ejs");
   });
- 
+
+  app.get("/login", (req, res) => {
+    res.render("login");
+  });
 }
 
 function main() {
-//   get1();
-  get2()  
-  
+  get_app();
   app.listen(3000);
 }
 
