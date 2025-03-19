@@ -7,13 +7,10 @@ function get() {
   });
 }
 
-
-
 function get_app() {
   app.set("view engine", "ejs");
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static("public"));
- 
 
   app.use(function (req, res, next) {
     res.locals.errors = [];
@@ -29,7 +26,7 @@ function get_app() {
   });
 
   app.post("/register", (req, res) => {
-    const errors = []; 
+    const errors = [];
 
     // Validate username and password
     if (typeof req.body.username !== "string") req.body.username = "";
@@ -41,7 +38,7 @@ function get_app() {
     if (req.body.username && req.body.username.length < 3)
       errors.push("Username must be greater than 3 characters.");
     if (req.body.password && req.body.password.length < 8)
-        errors.push("password must be greater than 8 characters.");
+      errors.push("password must be greater than 8 characters.");
     if (req.body.username && !req.body.username.match(/^[a-zA-Z0-9]+$/))
       errors.push("Username can only contain letters and numbers.");
 
